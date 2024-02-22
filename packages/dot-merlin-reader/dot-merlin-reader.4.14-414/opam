@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer:   "defree@gmail.com"
+authors:      "The Merlin team"
+synopsis:     "Reads config files for merlin"
+homepage:     "https://github.com/ocaml/merlin"
+bug-reports:  "https://github.com/ocaml/merlin/issues"
+dev-repo:     "git+https://github.com/ocaml/merlin.git"
+license:      "MIT"
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "ocaml" {>= "4.08" & < "5.0"}
+  "dune" {>= "2.9.0"}
+  "merlin-lib" {>= "4.9"}
+  "ocamlfind" {>= "1.6.0"}
+]
+description:
+  "Helper process: reads .merlin files and outputs the normalized content to
+  stdout."
+url {
+  src:
+    "https://github.com/ocaml/merlin/releases/download/v4.14-414/merlin-4.14-414.tbz"
+  checksum: [
+    "sha256=79018ccaa37c1501dd5c4d5cf78bc3420d641b1e82443662981c5472d973993d"
+    "sha512=ebefec44c7f54b10aa85895baacecf778930ee0c4cd5a257836755ccadd9018c20379511e254efa98ed7d48fff9ba9eeb93b45a722cc1d2d61f51570cc57985d"
+  ]
+}
+x-commit-hash: "7017cc271403487756e412349f3718a8ba2e6a36"
